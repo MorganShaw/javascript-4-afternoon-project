@@ -18,6 +18,13 @@
 */
 
 //Code Here
+const user = {
+  username: "",
+  email: "",
+  getUsername: function () {
+    return this.username
+  }
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -31,11 +38,14 @@ function Animal(name, species, food) {
   this.food = food
 
   this.eat = function() {
-    return (
-      this.name + ' is a ' + this.species + ' and likes to eat ' + this.food
-    )
+    // return (
+      // this.name + ' is a ' + this.species + ' and likes to eat ' + this.food
+      return `${this.name} is a ${this.species} and likes to eat ${ this.food}`
+    // )
   }
 }
+
+let animal1 = new Animal("Lucy", "dog", "cheese")
 
 //Code Here
 
@@ -56,6 +66,10 @@ let who = {
 }
 
 //Code Here
+
+const whoSaysHi = user.sayHi.bind(who)
+whoSaysHi()
+
 
 ////////// PROBLEM 4 //////////
 

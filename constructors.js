@@ -15,6 +15,12 @@
 */
 
 // Code here
+function CarFactory(make, model) {
+  this.make = make;
+  this.model = model;
+}
+
+// const myCar = new Car("Kia", "Optima");
 
 ////////// PROBLEM 2 //////////
 
@@ -34,15 +40,19 @@ function Employee(name, email, hireDate) {
   */
   
   // Code here
+  const bob = new Employee('Bob', 'bob@gmail.com', '01-02-98');
   
+  
+
+
   ////////// PROBLEM 3 //////////
   
   // Do not edit the code below.
   
-  var prius = new Car('Toyota', 'Prius', 2011);
-  var mustang = new Car('Ford', 'Mustang', 2013);
-  prius.moveCar(); // Increments prius' move property by 10. Returns the new move property.
-  mustang.moveCar(); // Increments mustang' move property by 10. Returns the new move property.
+  // var prius = new Car('Toyota', 'Prius', 2011);
+  // var mustang = new Car('Ford', 'Mustang', 2013);
+  // prius.moveCar(); // Increments prius' move property by 10. Returns the new move property.
+  // mustang.moveCar(); // Increments mustang' move property by 10. Returns the new move property.
   
   // Do not edit the code above.
   
@@ -57,7 +67,20 @@ function Employee(name, email, hireDate) {
   */
   
   // Code here
+  function Car(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.move = 0;
+    this.moveCar = function() {
+      return this.move += 10;
+    }
+  }
   
+  var prius = new Car('Toyota', 'Prius', 2011);
+  var mustang = new Car('Ford', 'Mustang', 2013);
+  prius.moveCar(); // Increments prius' move property by 10. Returns the new move property.
+  mustang.moveCar();
   ////////// PROBLEM 4 //////////
   
   /*
@@ -69,13 +92,23 @@ function Employee(name, email, hireDate) {
     Change the rating property to become this new number and return the updated rating.
   */
   
-  function Movie(name, genre, rating) {
-    this.name = name;
-    this.genre = genre;
-    this.rating = rating;
-  }
+  // function Movie(name, genre, rating) {
+  //   this.name = name;
+  //   this.genre = genre;
+  //   this.rating = rating;
+  // }
   
-  // Code here
+  // // Code here
+
+  // Movie.prototype.changeRating = function(num) {
+  //   return num;
+  //   this.rating =+ num / 2;
+  //   return this;
+  // }
+  
+
+  
+
   
   ////////// PROBLEM 5 //////////
   
@@ -84,6 +117,17 @@ function Employee(name, email, hireDate) {
   // Once the User constructor function is created, write a prototype method for the User function. Name this method addSavedPost. It should take in three parameters: id (a number), title (a string) and rating (a number). Use these parameters to create a new object and add it to the savedPosts array. Make sure to name the properties the same as described previously (id, title, rating).
   
   // Code here
+
+  function User(name, age, email, and savedPosts) {
+    this.name = name;
+    this.age = age; //how to make this a number?
+    this.email = email;
+    this.savedPosts = []
+  }
+
+  User.prototype.addSavedPost = function() {
+    
+  }
   
   ////////// PROBLEM 6 //////////
   

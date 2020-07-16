@@ -22,6 +22,7 @@ function CarFactory(make, model) {
 
 // const myCar = new Car("Kia", "Optima");
 
+
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
@@ -90,7 +91,7 @@ function Employee(name, email, hireDate) {
     This method should take in a number as a parameter that will be a new rating.
     Find the average between the old rating and the new rating.
     Change the rating property to become this new number and return the updated rating.
-  */
+  // */
   
   // function Movie(name, genre, rating) {
   //   this.name = name;
@@ -98,7 +99,7 @@ function Employee(name, email, hireDate) {
   //   this.rating = rating;
   // }
   
-  // // Code here
+  // // // Code here
 
   // Movie.prototype.changeRating = function(num) {
   //   return num;
@@ -118,15 +119,18 @@ function Employee(name, email, hireDate) {
   
   // Code here
 
-  function User(name, age, email, and savedPosts) {
+  function User(name, age, email, savedPosts) {
     this.name = name;
     this.age = age; //how to make this a number?
     this.email = email;
-    this.savedPosts = []
+    this.savedPosts = savedPosts; //this is an array of objects.
   }
 
-  User.prototype.addSavedPost = function() {
-    
+  User.prototype.addSavedPost = function(id, title, rating) {
+    let newObj = {
+      id, title, rating}
+      this.savedPosts.push(newObj)
+
   }
   
   ////////// PROBLEM 6 //////////
@@ -135,6 +139,14 @@ function Employee(name, email, hireDate) {
   // Write a prototype method for the User constructor function named removeSavedPost that will take in one number parameter representing the post id. Use this id to find and remove the matching object in the savedPosts array.
   
   // Code here
+
+  User.prototype.removeSavedPost = function (num) {
+    for(let i = this.savedPosts.length - 1; i >= 0; i--) {
+      if(this.savedPosts[i].id === num) {
+        this.savedPosts.splice(i, 1) 
+      }
+    }
+  }
   
   ////////// PROBLEM 7 //////////
   

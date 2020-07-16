@@ -93,20 +93,24 @@ function Employee(name, email, hireDate) {
     Change the rating property to become this new number and return the updated rating.
   // */
   
-  // function Movie(name, genre, rating) {
-  //   this.name = name;
-  //   this.genre = genre;
-  //   this.rating = rating;
-  // }
+  function Movie(name, genre, rating) {
+    this.name = name;
+    this.genre = genre;
+    this.rating = rating;
+  }
   
   // // // Code here
 
-  // Movie.prototype.changeRating = function(num) {
-  //   return num;
-  //   this.rating =+ num / 2;
-  //   return this;
-  // }
+  Movie.prototype.changeRating = function(num) {
+    this.rating = (this.rating + num) / 2
+    return this.rating;
+  }
   
+  // const flick = new Movie("Sabrina", "chickflick", 80)
+
+  // flick.changeRating(70)
+
+
 
   
 
@@ -118,6 +122,8 @@ function Employee(name, email, hireDate) {
   // Once the User constructor function is created, write a prototype method for the User function. Name this method addSavedPost. It should take in three parameters: id (a number), title (a string) and rating (a number). Use these parameters to create a new object and add it to the savedPosts array. Make sure to name the properties the same as described previously (id, title, rating).
   
   // Code here
+
+
 
   function User(name, age, email, savedPosts) {
     this.name = name;
@@ -148,6 +154,12 @@ function Employee(name, email, hireDate) {
     }
   }
   
+  // User.prototype.removeSavedPost = function (num) {
+  //   this.savedPosts = this.savedPosts.filter((e) => e.id !== num)
+  // }  
+
+  // The example above is sooooo much better. "e" refers to the element in the array. It always will for a filter.
+
   ////////// PROBLEM 7 //////////
   
   // You will continue to use the constructor function you created in problem 5.
@@ -155,3 +167,8 @@ function Employee(name, email, hireDate) {
   
   // Code here
   
+  User.prototype.changePostRating = function(num1, num2) {
+    const index = this.savedPosts.findIndex((e) => e.id === num1)
+    this.savedPosts[index].rating = num2
+    return this.savedPosts[index]
+  }
